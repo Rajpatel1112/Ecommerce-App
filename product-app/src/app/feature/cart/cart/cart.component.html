@@ -1,0 +1,19 @@
+<div class="d-flex align-items-center mb-4">
+  <a class="btn btn-primary me-2" routerLink="/product-list" role="button">Back to Store</a>
+  <h2 class="mx-auto">Your Cart</h2>
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let item of cartItems" class="cart-item">
+      <div class="card mb-4 cart-card">
+        <div class="card-body">
+          <h3 class="cart-item-name">{{ item.product.name }}</h3>
+          <p class="cart-item-quantity">Quantity: {{ item.quantity }}</p>
+          <p class="cart-item-price">Price: ₹{{ item.product.price }}</p>
+          <button class="btn btn-warning" (click)="reduceQuantity(item)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="total-price">Total Price: ₹{{ totalPrice }}</h3>
+</div>

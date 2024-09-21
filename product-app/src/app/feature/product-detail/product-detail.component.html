@@ -1,0 +1,12 @@
+<div class="d-flex align-items-center mb-4">
+  <a class="btn btn-primary me-3" routerLink="/product-list" role="button">Back to Store</a>
+  <h1  style="margin-left: 477px;" >Product Details</h1>
+</div>
+
+<div *ngIf="product" class="product-card">
+  <h1 class="product-header">{{ product.name }}</h1>
+  <p class="product-description">{{ product.description }}</p>
+  <p class="product-price">
+    Price: <span class="price">{{ product.price | currency:'INR':'symbol':'1.2-2' }}</span>
+  </p>
+</div>
